@@ -1,5 +1,6 @@
 package geekbrains.lesson3_4gb;
 
+
 public class PrintABC {
     static volatile char c = 'A';
     static Object monitor = new Object();
@@ -31,7 +32,7 @@ public class PrintABC {
         }
     }
     public static void main(String[] args) {
-
+        //Создать три потока, каждый из которых выводит определенную букву (A, B и C) 5 раз (порядок – ABСABСABС). Используйте wait/notify/notifyAll.
         new Thread(new doOrderABC('A', 'B')).start();
         new Thread(new doOrderABC('B', 'C')).start();
         new Thread(new doOrderABC('C', 'A')).start();
